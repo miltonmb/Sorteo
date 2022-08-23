@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title>Wheel - Sorteos VickyWolff</title>
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/JS/Winwheel.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha512-n6dYFOG599s4/mGlA6E+YLgtg9uPTOMDUb0IprSMDYVLr0ctiRryPEQ8gpM4DCMlx7M2G3CK+ZcaoOoJolzdCg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="modal.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&effect=neon|fire" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="bg">
+        <nav class="navbar navbar-custom navbar-expand-lg">
+            <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="m-0 order-0 order-md-1 position-absolute main-logo">
+                <a class="mx-auto" href="#">
+                    <img src="Opening.png" width="300">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+                <ul class="navbar-nav mr-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container d-flex flex-wrap align-content-center contenedor">
+            <div class="container col power_control">
+
+                <div class="row justify-content-center">
+                    <h2>VELOCIDAD</h2>
+                </div>
+
+                <div class="row">
+                    <div class="container power_controls" id="rojo" onClick="powerSelected(3);">
+                        <p id="pw3">Alta</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="container power_controls" id="amarillo" onClick="powerSelected(2);">
+                        <p id="pw2">Media</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="container power_controls" id="verde" onClick="powerSelected(1);">
+                        <p id="pw1">Baja</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button class="btn btn-primary btn-lg btn-block" id="spin_button" alt="Spin" onClick="startSpin();">
+                        GIRAR</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary btn-lg btn-block"
+                        onClick="resetWheel(); return false;">REINICIAR</button>
+                </div>
+            </div>
+
+            <div class="container col">
+                <div class="the_wheel">
+                    <canvas id="canvas" width="450px" height="475px">
+                    </canvas>
+                </div>
+            </div>
+
+            <div class="container col">
+                <div class="row justify-content-center">
+                    <h2>PARTICIPANTES</h2> <h2 id="total"> : 0</h2>
+                </div>
+                <textarea class="form-control" id="participantesText" rows="20"></textarea>
+                <div class="row">
+                    <button class="btn btn-primary btn-lg btn-block" onClick="cargarParticipantes()">CARGAR
+                        PARTICIPANTES</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary btn-lg btn-block" onclick=" deleteSegment()">BORRAR
+                        PARTICIPANTE</button>
+                </div>
+            </div>
+
+            <div id="modal-container">
+                <div class="modal-background">
+                    <div class="modal">
+                        <div class="container align-items-center">
+                            <div class="pyro">
+                                <div class="before"></div>
+                                <div class="after"></div>
+                                <div class="container partic align-items-center">
+                                    <h2 id="participant">I'm a Modal</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid footer">
+                <a href="https://twitch.tv/mjmartinezvt" target="_blank">
+                    <p>PÁGINA HECHA POR: MJMARTINEZVT <i class="fa fa-twitch"></i> </p>
+                </a>
+            </div>
+        </div>
+
+
+        <script src="/JS/wheel.js">
+        </script>
+    </div>
+    </div>
+</body>
+
+</html>

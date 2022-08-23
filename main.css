@@ -1,0 +1,106 @@
+h2 {
+    color      : white !important;
+    font-family: Anton !important;
+    text-shadow: 0 0 15px #000;
+}
+
+body,
+html {
+    height  : 100%;
+    overflow: hidden;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("fondosorteo.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    overflow           : hidden;
+}
+
+
+.navbar-custom {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.main-logo {
+    top: 0px;
+}
+
+.power_control {
+    width      : 200px;
+    text-align : center;
+    color      : black;
+    font-family: Anton;
+}
+
+.power_controls {
+    width : 70px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+#rojo {
+    background-color       : gray;
+    border-top-right-radius: 10px;
+    border-top-left-radius : 10px;
+}
+
+#amarillo {
+    background-color: gray;
+}
+
+
+#verde {
+    background-color          : gray;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius : 10px;
+}
+
+.contenedor {
+    margin-top: 150px;
+}
+
+.btn {
+    margin-top    : 5px;
+    font-family   : Anton;
+    word-spacing  : 10px;
+    letter-spacing: 1px;
+}
+
+.the_wheel {
+    width              : 600px;
+    height             : 600px;
+    background-image   : url(./wheel_back_new.png);
+    background-position: center;
+    background-size    : cover;
+}
+
+#canvas {
+    margin-top : 65px;
+    margin-left: 75px;
+
+}
+
+.footer p {
+    font-size     : 23px;
+    transition    : font-size .5s;
+    font-family   : Anton;
+    color         : white;
+    letter-spacing: 2px;
+}
+
+.footer p:hover {
+    font-size: 25px;
+    color    : #68d8fd;
+}
+
+a:hover{
+    text-decoration: none !important;
+  }
