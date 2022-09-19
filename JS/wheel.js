@@ -2,11 +2,13 @@ let audio = new Audio('tick.mp3');
 let wheelPower = 0;
 let wheelSpinning = false;
 let theWheel = new Winwheel({
+    'innerRadius': 70,
+    'textFontSize': 13,
     'animation':
     {
         'type': 'spinToStop',
         'duration': 10,
-        'spins': 8,
+        'spins': Math.floor(Math.random() * 20) + 8,
         'callbackFinished': alertPrize,
         'callbackSound': playSound,
         'soundTrigger': 'pin'
@@ -16,6 +18,7 @@ let theWheel = new Winwheel({
         'number': 1
     }
 });
+
 function addSegment(el) {
     var pins = parseInt(theWheel.pins.number) + 1;
     var randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -97,8 +100,34 @@ function startSpin() {
 }
 
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+
 function resetWheel() {
+
     theWheel.stopAnimation(false);
+    theWheel = new Winwheel({
+        'innerRadius': 70,
+        'textFontSize': 13,
+        'animation':
+        {
+            'type': 'spinToStop',
+            'duration': 10,
+            'spins': Math.floor(Math.random() * 20) + 8,
+            'callbackFinished': alertPrize,
+            'callbackSound': playSound,
+            'soundTrigger': 'pin'
+        },
+        'pins':
+        {
+            'number': 1
+        }
+    });
     theWheel.rotationAngle = 0;
     theWheel.draw();
 
@@ -110,12 +139,16 @@ function resetWheel() {
     document.getElementById("verde").style.backgroundColor = "gray"
     document.getElementById("rojo").style.backgroundColor = "gray"
 
+    document.getElementById("total").innerHTML = " : " + 0;
+    document.getElementById("participantesText").value = "";
+
     wheelSpinning = false;
 }
 
 function cargarParticipantes() {
     var lista = document.getElementById("participantesText");
     var listaArray = (lista.value).split(" ");
+    shuffleArray(listaArray);
     listaArray.forEach(el => {
         addSegment(el);
     })
